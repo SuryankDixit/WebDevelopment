@@ -2,5 +2,5 @@
 
 * What is Node?
 * Why are we learning it?
-    *Javascript
-    *Popular
+    * Due to Javascript
+    * Popular
