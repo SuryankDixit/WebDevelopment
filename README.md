@@ -1,2 +1,2 @@
 # WebDevelopment
-This is the practice section for Web Development.
+This is the practice section for web development
