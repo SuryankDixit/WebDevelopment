@@ -1,5 +1,7 @@
 var faker = require("faker");
 
+//generates fake information.
+
 for (let i = 0; i < 10; i++) {
     // var randomName = faker.name.findName();
     // var randomEmail = faker.internet.email();
