@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+
+    <h1>Yoy have fallen in love with
+        <%= Name %>
+    </h1>
+
+    <% if(Name.toLowerCase() === "nature") { %>
+        <p>Yes , Good choice.</p>
+        <% }else { %>
+            <p>Bad Choice.</p>
+            <% } %>
+                <%- include("partials/footer") %>

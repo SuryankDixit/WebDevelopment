@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+
+    <h2> Welcome to posts </h2>
+    <% for(let i=0;i<post.length;i++) {%>
+        <li>
+            <%= post[i].Title %> => <strong><%=post[i].Author%></strong>
+        </li>
+        <% } %>
+
+            <% post.forEach(function(posts){ %>
+                <li>
+                    <%= posts.Title %> => <strong><%=posts.Author%></strong>
+                </li>
+                <% }) %>
+                    <%- include("partials/footer") %>
