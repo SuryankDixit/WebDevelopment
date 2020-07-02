@@ -1,0 +1,29 @@
+<h1>Search Results:</h1>
+
+
+<table style="width:100%">
+    <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Poster</th>
+    </tr>
+    <% for(let i=0;i<data.Search.length;i++){ %>
+        <tr>
+            <td><strong><%= data.Search[i].Title %></strong> </td>
+            <td>
+                <%= data.Search[i].Year %>
+            </td>
+            <td>
+                <img src="<%= data.Search[i].Poster %>" alt="image">
+            </td>
+        </tr>
+
+        <% } %>
+</table>
+<a href="/"> Search Again</a>
+
+<!-- "Title": "Harry Potter and the Deathly Hallows: Part 2",
+      "Year": "2011",
+      "imdbID": "tt1201607",
+      "Type": "movie",
+      "Poster": "https://m.media- -->
