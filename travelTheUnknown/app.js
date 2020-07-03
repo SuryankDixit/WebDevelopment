@@ -10,9 +10,12 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 var places_to_visit = [
-    { name: "Mawsynram, Meghalaya", image: "https://www.hlimg.com/images/places2see/738X538/mawsynram_1510844669m.jpg" },
-    { name: "Chembra Peak, Wayand, Kerala", image: "https://www.escape2explore.com/storage/event-package/upload/Wayanad-3D-and-2N-Tour-with-Chembra-Peak-trek,-Cave-and-Waterfalls-10-04-2018-1523337556.jpg" },
-    { name: "Ziro, Arunachal Pradesh", image: "https://www.tourmyindia.com/states/arunachalpradesh/images/dilopolyang-maniipolyang1.jpg" }
+    { name: "Mawsynram, Meghalaya", image: "https://c.saavncdn.com/901/Hills-and-Horizons-English-2018-20180619150718-500x500.jpg" },
+    { name: "Chembra Peak, Wayand, Kerala", image: "https://c.saavncdn.com/357/Hills-English-2018-20180621182537-500x500.jpg" },
+    { name: "Ziro, Arunachal Pradesh", image: "http://www.highlandsanctuarymusic.com/wp-content/uploads/2019/07/Highland-Sanctuary-Of-Valleys-and-Hills-500x500.jpg" },
+    { name: "Mawsynram, Meghalaya", image: "https://c.saavncdn.com/901/Hills-and-Horizons-English-2018-20180619150718-500x500.jpg" },
+    { name: "Chembra Peak, Wayand, Kerala", image: "https://c.saavncdn.com/357/Hills-English-2018-20180621182537-500x500.jpg" },
+    { name: "Ziro, Arunachal Pradesh", image: "http://www.highlandsanctuarymusic.com/wp-content/uploads/2019/07/Highland-Sanctuary-Of-Valleys-and-Hills-500x500.jpg" }
 ];
 
 app.get("/", function(req, res) {
@@ -47,7 +50,7 @@ app.get("/places/new", function(req, res) {
 });
 
 
-app.listen(10000, function(req, res) {
+app.listen(30000, function(req, res) {
 
     console.log("Server has started! Travel the Unknown Places.");
 });
