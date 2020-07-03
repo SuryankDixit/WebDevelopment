@@ -1,0 +1,10 @@
+<%- include("partials/header") %>
+
+    <h1>Suggest a new Place:</h1>
+    <form action="/places" method="POST">
+        <h4><input type="text" name="new_place" placeholder="Suggestions"></h4>
+        <h4><input type="text" name="image_url" placeholder="Image Url"></h4>
+        <button>Submit</button>
+    </form>
+
+    <%- include("partials/footer") %>

@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+
+    <div class="container">
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Welcome to TravelTheUnknown !</h1>
+                <p>Places that you must visit once in a lifetime.</p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="/places/new"> Add New Place.</a>
+                </p>
+            </div>
+        </header>
+
+        <% for(let i=0;i<visit.length;i++){ %>
+
+            <div>
+                <h4>
+                    <%= visit[i].name %>
+                </h4>
+                <img src="<%= visit[i].image %>" alt="image">
+            </div>
+            <% } %>
+    </div>
+    <%- include("partials/footer") %>
