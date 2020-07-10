@@ -93,9 +93,11 @@ app.post("/places", function(req, res) {
 
     let place = req.body.new_place;
     let image = req.body.image_url;
+    let desc = req.body.description;
     let newPlace = {
         name: place,
-        image: image
+        image: image,
+        desc: desc
     };
 
     // Rather than pushing data into the array , moe save data in the database.
@@ -121,10 +123,18 @@ app.get("/places/new", function(req, res) {
 
 // SHOW Route: get : Displays the info about route. Shows info about one thing in particular.
 
+
 app.get("/places/:id", function(req, res) {
 
     // Searching on the basis of ID:
-    res.render("show");
+    var id = req.params.id;
+    p1.findById(id, function(err, foundPlace) {
+        if (err) {
+            console.log("Error" + err);
+        } else {
+            res.render("show", { place: foundPlace });
+        }
+    })
 });
 
 
