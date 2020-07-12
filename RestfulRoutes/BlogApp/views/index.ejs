@@ -1,0 +1,17 @@
+<%- include("partials/header") %>
+
+    <h1> Welcome to index page.</h1>
+    <div>
+        <% for(let i=0;i<blogs.length;i++){ %>
+            <h3>
+                <%= blogs[i].title %>
+            </h3>
+            <img src="<%= blogs[i].image %> " alt="image">
+            <%= blogs[i].created %>
+                <p>
+                    <%= blogs[i].body %>
+                </p>
+                <a href="/blogs/<%= blogs[i]._id %> ">Read More</a>
+                <% } %>
+    </div>
+    <%- include("partials/footer") %>
