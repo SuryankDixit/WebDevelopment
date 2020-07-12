@@ -1,0 +1,39 @@
+<%- include("partials/header") %>
+    <div class="container">
+        <div class="row">
+
+            <div style="width: 30%; margin: 25px auto;">
+                <h1 style="text-align: center">New Post</h1>
+                <form action="/blogs" method="POST">
+                    <div class="form-group">
+                        <label><strong> Blog Title:</strong></label>
+                        <input class="form-control" type="text" name="blog[title]" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label><strong>Image:</strong> </label>
+                        <input class="form-control" type="text" name="blog[image]" placeholder="Image URL">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea4"><strong> Blog-Content:</strong></label>
+                        <textarea class="form-control" rows="5" name="blog[body]"></textarea>
+
+                        <!-- <label>Blog-Content:</label>
+                        <textarea name="blog[body]"></textarea> -->
+                    </div>
+                    <div class="form-group">
+                        <h4><button class="btn btn-lg btn-primary btn-block">Submit!</button></h4>
+                        <!-- <input type="Submit"> -->
+                    </div>
+                </form>
+                <a href="/blogs">Go Back</a>
+            </div>
+        </div>
+    </div>
+    <!-- <h1>Suggest a new Place:</h1>
+    <form action="/places" method="POST">
+        <h4><input type="text" name="new_place" placeholder="Suggestions"></h4>
+        <h4><input type="text" name="image_url" placeholder="Image Url"></h4>
+        <button>Submit</button>
+    </form> -->
+
+    <%- include("partials/footer") %>
