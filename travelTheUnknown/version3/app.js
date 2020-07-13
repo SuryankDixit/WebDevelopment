@@ -1,7 +1,10 @@
+const p1 = require("./models/places");
+
 var express = require("express"),
     app = express(),
     mongoose = require("mongoose"),
     bodyparser = require("body-parser");
+p1 = require("./models/places");
 
 
 //Set up default mongoose connection
@@ -18,29 +21,6 @@ db.on('open', function() {
     console.log("Connectd..");
 });
 
-// SCHEMA SETUP
-// mongoose-model
-
-var places_schema = mongoose.Schema;
-
-var place1 = new places_schema({
-    name: {
-        type: String,
-        required: true
-    },
-    image: {
-        type: String,
-        required: true
-    },
-    desc: {
-        type: String,
-        required: true
-    }
-});
-
-// Compile model from schema
-// Means p1 is a model(like an object) that uses this
-var p1 = mongoose.model('p1', place1);
 
 // p1.create({
 
