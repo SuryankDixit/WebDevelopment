@@ -7,11 +7,11 @@
                 <%= blogs[i].title %>
             </h3>
             <img src="<%= blogs[i].image %> " alt="image">
-            <%= blogs[i].created %>
+            <%= blogs[i].created.toDateString() %>
                 <p>
-                    <%= blogs[i].body %>
+                    <%= blogs[i].body.substring(0,90)%>...
+                        <a href="/blogs/<%= blogs[i]._id %> ">Read More</a>
                 </p>
-                <a href="/blogs/<%= blogs[i]._id %> ">Read More</a>
                 <% } %>
     </div>
     <%- include("partials/footer") %>
