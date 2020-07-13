@@ -1,6 +1,7 @@
 var express = require("express"),
     bodyparser = require("body-parser"), // use it to parse values from form to post request.
     mongoose = require("mongoose"),
+    methodOverride = require("method-override"),
     app = express();
 
 // APP CONFIG
@@ -8,6 +9,7 @@ var express = require("express"),
 app.set("view engine", "ejs"); // Easy to send html file back to client if we use ejs;
 app.use(express.static("public")); // all the CSS JS HTML files will be here
 app.use(bodyparser.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 
 var url = 'mongodb://127.0.0.1/restful_blog_app';
@@ -87,6 +89,47 @@ app.get("/blogs/:id", function(req, res) {
 });
 
 
-app.listen(30000, function(req, res) {
+// EDIT Route:
+app.get("/blogs/:id/edit", function(req, res) {
+
+    blog.findById(req.params.id, function(err, foundBlog) {
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.render("edit", { blog: foundBlog });
+        }
+    });
+});
+
+// UPDATE ROUTE:
+// HTML dont support PUT requests , that is why we see SHOW route results when we edit post and submit it.
+// HTL cnsiders put rqst as an get rqst.
+// Now we will use METHOD OVERRIDE: 
+
+app.put("/blogs/:id", function(req, res) {
+
+    blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog) {
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs/" + req.params.id);
+        }
+    });
+});
+
+//DELETE ROUTE:
+app.delete("/blogs/:id", function(req, res) {
+
+    blog.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs");
+        }
+    });
+})
+
+
+app.listen(10000, function(req, res) {
     console.log("Server has started, Welcome to BLOG APP.");
 });
