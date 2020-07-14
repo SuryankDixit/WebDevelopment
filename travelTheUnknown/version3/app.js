@@ -1,11 +1,8 @@
-const p1 = require("./models/places");
-
 var express = require("express"),
     app = express(),
     mongoose = require("mongoose"),
     bodyparser = require("body-parser");
-p1 = require("./models/places");
-
+const p1 = require("./models/places");
 
 //Set up default mongoose connection
 var url = 'mongodb://localhost:27017/myPlaces';
